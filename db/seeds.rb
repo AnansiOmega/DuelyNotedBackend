@@ -9,12 +9,13 @@
 User.destroy_all
 Note.destroy_all
 
-User.create(username: 'Iggs')
+User.create(username: 'Iggs', password: '123')
 
 10.times do Note.create(
     user_id: User.first.id,
     body: Faker::Books::Lovecraft.sentence,
-    title:Faker::Books::Lovecraft.location
+    title:Faker::Books::Lovecraft.location,
+    category: 'Literature'
 )
 end
 
